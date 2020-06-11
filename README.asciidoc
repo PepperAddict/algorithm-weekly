@@ -1,0 +1,9 @@
+=  Algorithm Weekly
+
+I am attempting to improve my Algorithm reading/writing skill by attempting to solve something with no time limit. 
+
+=== printEquation.js
+
+This algorithm is for getting an input and use either `-` or `+` in different combinations in between each input digit to see if it equals 0. 
+For example: `input = 9191` and turn it into something like 9+1-9+1 and yay if it equals to zero. 
+
