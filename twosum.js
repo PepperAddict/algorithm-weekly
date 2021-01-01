@@ -8,7 +8,7 @@ var twoSum = function(nums, target) {
         // step 3: we search the map for the key for the mysterious x and we return it
         // as the new array with the index.
         if (keepIndex.has(inBetween)) {
-            result[0] = keepIndex.get(inBetween);
+            result[0] = keepIndex.get(inBetween); //get the value of what we stored which was the index of mysterious x
             result[1] = i;
             return result;
         }
