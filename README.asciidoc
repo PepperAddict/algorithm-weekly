@@ -4,9 +4,27 @@ I am attempting to improve my Algorithm reading/writing skill by attempting to s
 
 Edit: Well looks like I abandoned this. I am working on other projects and hoping to squeeze this in later. 
 
-=== printEquation.js
+=== June 2020
+
+printEquation.js
 
 This algorithm is for getting an input and use either `-` or `+` in different combinations in between each input digit to see if it equals 0. 
 For example: `input = 9191` and turn it into something like 9+1-9+1 and yay if it equals to zero. 
 
 This took almost a full day to complete. Eh, it's a start.
+
+== Update January 4, 2021
+
+I should really start a log of my progress. So here's another start...
+
+I have failed numerous interviews because of my weakness in algorithm and I need to improve that. I enjoy working on projects, but algorithms is what they want. 
+
+I have an interview coming up and luckily they're giving me time to improve!
+
+Luckily I've already started with some so here's what I've learned so far: 
+
+=== Was there a cycle
+
+linkcycle.js 
+
+I had a bit of trouble with this since I had to use their internal system, but I used I think was called the floyd algorithm(?). How it tests to see if there's a cycle is to have two runners, if they ever meet, then of course there's a cycle. The way that they'd meet is if one of the racer is faster than the other. 
