@@ -1,0 +1,5 @@
+= Notes on understanding recursion 
+
+Recursion is a concept of self reference. 
+
+So a recursive function is a function that will run in itself. 

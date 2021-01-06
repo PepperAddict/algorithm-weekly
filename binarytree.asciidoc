@@ -1,0 +1,20 @@
+= Notes on understanding a binary tree
+
+A tree structor can have any number of branches or (nodes), but in a binary tree, it only has one- two nodes. The first node is called the root. 
+
+Binary trees are ordered in a way that the left child is less than or equal to the parent node while the right node is greater than or equal to the parent node. 
+
+== purpose of binary search: 
+
+
+I just watched The Coding Train talk about it and he did an amazing job at helping me understand a binary tree's purpose! I just got an "ohhhhh" moment, basically. 
+
+== random notes on binary tree
+
+* So the way it works for binary search is to keep dividing it in half till you get the right one. 
+
+* A binary tree is considered a data structure much like strings, arrays, integers, linked lists. etc.
+
+* it's considered sorted because if you go from the lowest and left most, you'll get lowest to highest. 
+
+NOTE:  I had to break out of this topic since I believe I have lack of understanding in recursion. 
