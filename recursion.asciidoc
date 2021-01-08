@@ -1,5 +1,7 @@
 = Notes on understanding recursion 
 
-Recursion is a concept of self reference. 
+So, recursion wasn't as complicated as I thought it was. I've already known about it, but didn't quite give it a name. 
 
-So a recursive function is a function that will run in itself. 
+So basically what it is writing a function, and within that function, you call it. What will happen by default is that it will run repeatedly into an infinite loop. 
+
+That's pretty much it, really. I played with recursion using canvas and drawing circles to make cool patterns while following a bit from the coding train dude. The file is drawRecursion.js

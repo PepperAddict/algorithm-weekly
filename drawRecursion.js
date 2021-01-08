@@ -10,19 +10,18 @@ function createCircle(size, position = [300, 300]) {
 
   context.lineWidth = 1;
   context.strokeStyle = "#00FFFF";
+
   context.beginPath();
   context.arc(X, Y, size, 0, 2 * Math.PI);
   context.stroke();
 
-  // here we play with recursion 
-  // to limit, i wanted it to only do the recursion if size is less than canvas client width which is 500
-
-    if (size > 2) {
+      if (size > 2) {
         //if multiply less than 1, it'll get smaller
         createCircle(size * 0.5, [X + size * 0.5, Y  + size * 0.6])
         createCircle(size * 0.5, [X - size * 0.5, Y - size * 0.6])
         createCircle(size * 0.5, [300, 300])
     }
+
 
 }
 
