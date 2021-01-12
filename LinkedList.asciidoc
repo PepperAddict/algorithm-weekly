@@ -1,0 +1,4 @@
+= Notes on Linked List
+
+There was an easy question on leetcode that I didn't fully understand. I always thought that linked list was just another name for array. Boy was I very wrong. 
+

@@ -1,0 +1,33 @@
+= Notes on Big O Notation 
+
+I sometimes see o (n) and I end up skipping it out of my site because I didn't know what it is. 
+
+I'm trying to kick myself when I see something I don't recognize and actually learn it. 
+
+
+Big O notation is used to classify how scalable a function is. This will let you estimate the longest run time of a function based on its input size. 
+
+The purpose of this is finding out how slower the function will run depending on its input. Will the runtime of the function be consistently the same, will it take longer, or will it change in some way. 
+
+== 0 (1)
+
+the `0 (1)` notation is consistently the same througout also called *constant runtime*. If the input was only 1 value in an array or 3000. It will take the same amount of time.  For example: 
+
+function logIt(array) {
+    console.log(array[0])
+}
+
+All it does is select an item in an array and that's it. 
+
+== 0 (n)
+
+The `0 (n)` notation has to do with depending on its input and it will determine how long it will take. Also called *Linear runtime*. So if the input increases, so will the runtime. 
+For example having to loop through each and every value: 
+
+```
+function logAll(array) {
+    for (var i = 0; i < array.length; i++) {
+        console.log(array[i])
+    }
+}
+```
