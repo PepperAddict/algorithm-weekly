@@ -2,3 +2,77 @@
 
 There was an easy question on leetcode that I didn't fully understand. I always thought that linked list was just another name for array. Boy was I very wrong. 
 
+A linked list is a linear data structure
+
+
+
+
+
+in `linklist.js` I will create my own linked list
+
+== Creating a linked list 
+
+If we were to manually create a linked list
+it would look something like this: 
+
+```
+const n2 = {
+    data: 100
+}
+const n2 = {
+    data: 200
+}
+const n3 = {
+    data: 300
+}
+n1.next = n2 
+n2.next = n3
+
+```
+The above would look like: 
+
+100 -> 200 -> 300 -> null
+It's connected by its `next`
+
+But now we want to create this programatically instead of manually inserting these values 
+
+== The node 
+
+So in order to create a node, we could use an object function 
+
+```
+function Node (data, next = null) {
+    this.data = data
+    this.next = next
+}
+```
+
+Now that we've created a node setup, we need to create the tree for it to go in. 
+
+```
+function LinkedList() {
+    this.head = null
+}
+```
+
+The above will be the outer container to put everything together. The other will have a method to do the gluing 
+
+```
+LinkedList.prototype.insertNode = function (data) {
+    this.head = new Node(data, this.head)
+}
+
+insertNode(100)
+insertNode(10)
+
+```
+
+The above will get two values passed in. 300 and 10. insertNode will use Node object function
+
+The above would look like this: 
+
+10 -> 100
+
+What's going on is that it's going backwards. this.head is initially empty in the beginning so it'll insert null as the next parameter. When the following insertnode is entered, the previous this.head would be 10 which would be inserted in with 100's next. 
+
+We officially created a linked list, but there's an issue. It's getting inserted first. As in, it's going backwards. I would assume when people insert a value they expect it to go right afterwards.

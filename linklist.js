@@ -19,6 +19,24 @@ LinkedList.prototype.insertNode = function (data) {
     console.log(this)
 }
 
+LinkedList.prototype.insertLast = function (data) {
+    let node = new Node(data)
+    let current;
+
+    if (!this.head) {
+        this.head = node;
+        // this would look like 
+        // data, null
+    } else {
+        // if not null then lets assign 
+        //head 
+        current = this.head 
+        current.next = node; 
+
+        
+    }
+}
+
 function setup(...nums) { // 0 (n)
     
     let list = new LinkedList()
@@ -27,5 +45,5 @@ function setup(...nums) { // 0 (n)
     }
 
 }
-let sets = [100, 200]
+let sets = [100, 10]
 setup(...sets)

@@ -31,3 +31,4 @@ function logAll(array) {
     }
 }
 ```
+So for each value in an array, it will 
