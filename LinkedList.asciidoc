@@ -58,12 +58,12 @@ function LinkedList() {
 The above will be the outer container to put everything together. The other will have a method to do the gluing 
 
 ```
-LinkedList.prototype.insertNode = function (data) {
+LinkedList.prototype.insertFirst = function (data) {
     this.head = new Node(data, this.head)
 }
 
-insertNode(100)
-insertNode(10)
+insertFirst(100)
+insertFirst(10)
 
 ```
 
@@ -75,4 +75,58 @@ The above would look like this:
 
 What's going on is that it's going backwards. this.head is initially empty in the beginning so it'll insert null as the next parameter. When the following insertnode is entered, the previous this.head would be 10 which would be inserted in with 100's next. 
 
-We officially created a linked list, but there's an issue. It's getting inserted first. As in, it's going backwards. I would assume when people insert a value they expect it to go right afterwards.
+We officially created a linked list, but there's an issue. It's getting inserted first. As in, it's going backwards. I would assume when people insert a value they expect it to go right after the others. 
+
+So we will call this function `insertLast`
+
+```
+LinkedList.prototype.insertLast = function (data) {
+}
+```
+
+and inside... 
+We want to create our new node and name it node 
+
+```
+let node = new Node(data)
+```
+
+First, we want to just insert it in if there is no value yet. So in that case, we'll create an if statement. 
+
+```
+if (!this.head) {
+    this.head = node
+}
+```
+
+Now, to be able to add something afterwards, we'd need to do a while loop if it has a next value. 
+So what I wanted to understand that this.head is now {value, null}
+
+The first of the tree is node: {100, null}
+
+So now we're entering in 10 to our linked list 
+
+so now it will use this else statement: 
+
+```
+else {
+    this.head.next = new Node(value)
+}
+```
+
+Now we have 
+
+100 -> 10
+
+Third and so forth value will be tricky. 
+We'll have a while loop check to see if there's a .next value, and if there is, move stuff around by putting 
+the previous's next as the head 
+so it'll still look like this: 
+
+100 -> 10
+but that is where the linking happens. 
+
+Now we're setting 2nd value a next which is 30
+
+100 -> 10 -> 30 
+

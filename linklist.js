@@ -21,29 +21,31 @@ LinkedList.prototype.insertNode = function (data) {
 
 LinkedList.prototype.insertLast = function (data) {
     let node = new Node(data)
-    let current;
 
+    
     if (!this.head) {
         this.head = node;
-        // this would look like 
-        // data, null
-    } else {
-        // if not null then lets assign 
-        //head 
-        current = this.head 
-        current.next = node; 
 
-        
+    } else {
+
+        while (this.head.next) {
+            this.head = this.head.next
+        }
+
+        this.head.next = node; 
+
     }
+    this.size++
 }
 
 function setup(...nums) { // 0 (n)
     
     let list = new LinkedList()
     for (let x of nums) {
-        list.insertNode(x)
+        list.insertLast(x)
     }
 
+
 }
-let sets = [100, 10]
+let sets = [100, 10, 30]
 setup(...sets)
