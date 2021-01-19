@@ -10,11 +10,15 @@ function Node(data, next = null) {
 
 function LinkedList() {
     this.head = null;
-    this.size = 0;
+    this.length = 0;
+    this.size = function() {
+        return length
+    }
+    
 }
 
 
-LinkedList.prototype.insertNode = function (data) {
+LinkedList.prototype.insertFirst = function (data) {
     this.head = new Node(data, this.head) 
     console.log(this)
 }
@@ -35,7 +39,38 @@ LinkedList.prototype.insertLast = function (data) {
         this.head.next = node; 
 
     }
-    this.size++
+    this.length++
+}
+
+LinkedList.prototype.removeNode = function(data) {
+    let currentNode = this.head;
+    let previousNode;
+    
+    if (currentNode.data === data) {
+        this.head = currentNode.next // set it to its next value
+    } else {
+        while (currentNode.data !== data) {
+            previousNode = currentNode; 
+            currentNode = currrentNode.next 
+        }
+
+        previousNode.next = currentNode.next
+    }
+    this.length --;
+}
+
+LinkedList.prototype.getIndex = function(value) {
+   let index = -1;
+   console.log(index)
+   while (this.head) {
+       index++;
+       if (this.head.data === value) {
+           return index;
+       } 
+   }
+
+   return -1;
+
 }
 
 function setup(...nums) { // 0 (n)
@@ -44,8 +79,10 @@ function setup(...nums) { // 0 (n)
     for (let x of nums) {
         list.insertLast(x)
     }
-
+    list.getIndex(10)
 
 }
+
+
 let sets = [100, 10, 30]
 setup(...sets)
