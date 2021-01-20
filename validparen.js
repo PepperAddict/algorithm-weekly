@@ -1,67 +1,101 @@
-
-
-
-function Openers(s, next = null) {
-    this.character = s
-    this.next = next 
+function Each(s, next = null) {
+  this.character = s;
+  this.next = next;
 }
 
 function LinkedList() {
-    this.head = null;
-    this.length = 0;
+  this.head = null;
+  this.length = 0;
 }
-function LinkedListTwo() {
-    this.head = null;
-    this.length = 0
-}
-LinkedList.prototype.insertLast = function (s) {
 
-    this.head = new Openers(s, this.head)
-    this.length++
-}
-LinkedListTwo.prototype.insertLast = function (s) {
-    this.head = new Openers(s, this.head)
-    this.length++
-}
-let isValid = function(s) {
-    let opens = []
-    let closes = []
+LinkedList.prototype.insertFirst = function (s) {
+  let each = new Each(s);
+  let current;
 
-    let openers = {
-        '(': ')',
-        '[': ']',
-        '{': '}'
-    }
-    let link = new LinkedList()
-    let linktwo = new LinkedListTwo()
-
-    for (let x of s) {
-        link.insertLast(x)
-    }
-    // console.log(link)
-    // console.log(linktwo)
-
-    //lets compare our linked lists we created for comparison 
-    //if digit list doesn't match it sucks anyway 
-
-    console.log(opens)
-    console.log(closes)
-
-    if (opens.length !== closes.length) {
-        console.log('fail')
-    } else {
-
+  if (!this.head) {
+    this.head = each;
+  } else {
+    current = this.head;
+    while (current.next) {
+      current = current.next;
     }
 
-}
+    current.next = each;
+  }
+  this.length++;
+};
 
+LinkedList.prototype.match = function () {
+  let currentNode = this.head;
 
-isValid('()') // should say valid 
+  let track = [];
+  let keepgoing = true;
 
-// isValid('(){}[]') // valid 
-// isValid('(]') // invalid 
-// isValid('([)]') //is invalid
-// isValid('({})') // valid
+  let openers = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+ 
+  while (currentNode && keepgoing) {
+    
+      let character = currentNode
+        ? currentNode.hasOwnProperty("character")
+        : false;
+
+      if (character) {
+
+        if (openers.hasOwnProperty(currentNode.character)) {
+
+          track.unshift( {open : openers[currentNode.character]})
+          currentNode = currentNode && currentNode.next && currentNode.next;
+        } else if (!currentNode.hasOwnProperty("character")) {
+          keepgoing = false;
+        } else {
+
+          if (track.length > 0) {
+            let trackval = track[0].open
+
+            if (currentNode.character === trackval) {
+
+              //success now remove the key
+              track.shift();
+
+            } else {
+                track.push('oh')
+            }
+          } else {
+              track.push('oh')
+          }
+          currentNode = currentNode && currentNode.next && currentNode.next;
+        }
+      }
+    
+  }
+
+  let lengthofTrack = track.length;
+  console.log(track);
+  return lengthofTrack > 0 ? false : true;
+};
+
+let isValid = function (s) {
+  let link = new LinkedList();
+  for (let x of s) {
+    link.insertFirst(x);
+  }
+
+  return link.match();
+};
+
+//isValid("()"); // should say valid
+//isValid("[");
+//isValid('[[[]')
+//isValid(']')
+isValid('(])')
+//isValid('(){}[]') // valid
+//isValid('(]') // invalid
+//isValid('([)]') //is invalid
+//isValid("([])"); // valid
+//isValid("{[]}")
+//isValid("{[]}")
 // isValid('') // valid
-
-//need to understand stack

@@ -69,7 +69,7 @@ LinkedList.prototype.getIndex = function(value) {
        } 
    }
 
-   return -1;
+   console.log(index)
 
 }
 
