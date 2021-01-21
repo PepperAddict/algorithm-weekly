@@ -78,17 +78,51 @@ LinkedList.prototype.match = function () {
   return lengthofTrack > 0 ? false : true;
 };
 
+// let isValid = function (s) {
+//   let link = new LinkedList();
+//   for (let x of s) {
+//     link.insertFirst(x);
+//   }
+
+//   return link.match();
+// };
+
 let isValid = function (s) {
-  let link = new LinkedList();
+  let track = []
+  let openers = {
+    "(": ")",
+    "[": "]",
+    "{": "}",
+  };
+
   for (let x of s) {
-    link.insertFirst(x);
+
+
+    if (openers.hasOwnProperty(x)) {
+      track.unshift({key: openers[x]})
+    } else {
+      if (track.length > 0) {
+        //get first 
+        let trackval = track[0].key
+
+        if (x === trackval) {
+          track.shift();
+        } else {
+          track.push('oh')
+        }
+      } else {
+        track.push('oh')
+      }
+    }
+
   }
 
-  return link.match();
-};
+  return track.length > 0 ? false : true;
 
-//isValid("()"); // should say valid
-//isValid("[");
+}
+
+isValid("()"); // should say valid
+isValid("[");
 //isValid('[[[]')
 //isValid(']')
 isValid('(])')
