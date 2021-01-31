@@ -1,8 +1,8 @@
-//but they want an O (log n) way whatever that means. 
+//but they want an O (log n) binary search
 
 
 
-var search = function (nums, target) { // this is O (n) way 
+var search = function (nums, target) { // O (n) 
     let num = nums.indexOf(target)
     console.log(num)
     return num

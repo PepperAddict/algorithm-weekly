@@ -122,14 +122,14 @@ let isValid = function (s) {
 }
 
 isValid("()"); // should say valid
-isValid("[");
-//isValid('[[[]')
-//isValid(']')
-isValid('(])')
+isValid("["); //invalid
+//isValid('[[[]') //invalid
+//isValid(']') //invalid
+isValid('(])') //invalid
 //isValid('(){}[]') // valid
 //isValid('(]') // invalid
 //isValid('([)]') //is invalid
 //isValid("([])"); // valid
-//isValid("{[]}")
-//isValid("{[]}")
+//isValid("{[]}") //valid
+//isValid("{[]}") //valid
 // isValid('') // valid
