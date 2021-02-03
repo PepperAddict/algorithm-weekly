@@ -16,3 +16,5 @@ function findSignatureCounts(arr) {
 findSignatureCounts([2, 1]) //[2, 2] 
  findSignatureCounts([1, 2]) //[ 1, 1]
  findSignatureCounts([2, 1]) // [2, 2]
+
+ //0 (n)
