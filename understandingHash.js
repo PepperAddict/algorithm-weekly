@@ -33,7 +33,7 @@ HashTable.prototype.remove = function(key) {
 HashTable.prototype.search = function() {
     let index = hash(key, this.size)
     return this.buckets[index].get(key)
- 
+
 }
 
 let hashy = new HashTable()

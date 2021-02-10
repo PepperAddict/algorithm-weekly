@@ -34,3 +34,93 @@ Luckily I've already started with some so here's what I've learned so far:
 linkcycle.js 
 
 I had a bit of trouble with this since I had to use their internal system, but I used I think was called the floyd algorithm(?). How it tests to see if there's a cycle is to have two runners, if they ever meet, then of course there's a cycle. The way that they'd meet is if one of the racer is faster than the other. 
+
+== Update February 9, 2021
+
+I'm still trying to understand big O notation. 
+So when it comes to arrays, when adding something to the end of the array, it's O (1), but adding/removing to middle or beginning is considered O (N).
+
+=== Arrays
+
+To find an address of the element at a certain index, 
+the calculation is: 
+`array'sAddress + elementSize x (theIndexYouWant - TheFirstIndex)`
+
+=== Linked List
+
+Linked list only goes one direction so it'll look like this: 
+
+head -> node 1 -> node 2 -> node 3 -> node 4  (sometimes it'll have a tail pointer)
+
+The node will look like this: 
+
+* key 
+* next pointer
+
+Linked list has a set of operations (api) to go with it. The names can be different.
+
+* PushFront(key)  'add to the front' O (1) since it updates head to send to the new node, and the previous node's head to the new node.
+* Key TopFront() 'return front item'  O(1) to easily access that node.
+* PopFront() 'remove front item' O (1) It needs to search for the first node which is simple since it's right at head and it can easily be removed. Update the head pointer to the next element.
+
+* PushBack(key)/append 'add to back' If we don't have a tail pointer, it'll be O(n) since we'd have to go through the whole list till we get to the end. 
+* Key TopBack() 'return back item' it will be O (n) to retrieve that item even if there is a tail pointer to help out.
+* PopBack() 'remove back item' Same with Push Back, we'd have to go to the end to be able to remove O (n) if there is no tail pointer.
+* Boolean Find(Key) 'is key in list?' O (n) since it's searching
+* Erase(key)  'remove key from list' O (n) since it's searching 
+* Boolean Empty()  'empty list'  Check to see if head is null  O(1)
+* AddBefore(Node, Key) 'adds key before a given node'  O (n) Since we don't have a link to the previous element, so we to loop till we can access the node before. 
+* AddAfter(Node, Key) 'adds a key after a given node' O (1) and simple since all that's needed to be done is get the node, change its next to the new Node and then set the new node's next to the previouss node's next
+
+
+=== Doubly-Linked Lists
+
+To solve with the issue of having to go through an array just to get to the previous element of a node, there's doubly which is two ways of going through. 
+
+It will look like this: 
+
+head -> node 1  <--> node 2 <--> node 3 <--> tail
+
+To implement it, we add another pointer to the mix which is a previous pointer. 
+the node will have 
+
+* key 
+* next pointer
+* previous pointer
+
+So for operations like popBack will end up being O (1)
+
+
+=== Stacks 
+
+Stacks is a data type that gets piled onto the top and treat it as such. 
+It has some operations
+
+Stacks can be implemented with an array or a linked list
+
+
+* push (key)  'adds key to collection' This is O (1) 
+* key top() ' returns most recently-added key' If the length is 2 then call that index to get its key. O (1)
+* key pop() 'removes and returns most recently-added key'  Get the last element and remove it. O (1)
+* Boolean Empty() 'are there any elements?' O(1) since we can check the length if it's 0 or null
+
+
+
+* They are also called *LIFO* which stands for `Last In First Out`
+
+=== Queue
+
+Similar to stack and it has some operations. Refered to as *FIFO*. `First-In, First-Out`
+
+Queue can be implemented with Linked List and Arrays. 
+
+* Enqueue (key) 'adds key to collection'
+    * To implement, it usually goes in like a linked list. New entries will be added to the back of the list before tail. 
+    * This uses list PushBack()
+* Key Dequeue(): 'remotes and returns least recently-added key' // the difference here is stack returns most recently-added key. Hopefully the instructor talks about this later since i'm not sure what he's talking about. 
+    * To implement, it will remove the element that has been there the longest so right after head. 
+    * This uses list TopFront() and PopFront()
+* Boolean Empty(): are there any elements?
+
+
+=== Trees

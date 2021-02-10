@@ -46,8 +46,8 @@ function rotationalCipher(input, rotationFactor) {
       intoArray[indi] = numbers[k];
     }
   }
-  console.log(intoArray.join(""));
-//   return intoArray.toString();
+
+  return intoArray.join("");
 }
 
 rotationalCipher("All-convoYs-9-be:Alert1.", 4); //Epp-gsrzsCw-3-fi:Epivx5.
