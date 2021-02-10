@@ -123,4 +123,36 @@ Queue can be implemented with Linked List and Arrays.
 * Boolean Empty(): are there any elements?
 
 
-=== Trees
+== Updated February 10, 2021
+
+This is more to do with trees and how to traverse it. It uses Depth-First-Search (DFS) or Breadth-First-Search (BFS)
+
+Typically they use recursive algorithm to traverse the tree. 
+
+=== In Order Traversal 
+
+The way to traverse a tree is by going to left most, parent, parent's right child, then back up. 
+Otherwise also known as left -> node -> right
+
+This method is more for a binary tree 
+
+=== Pre Order Traversal
+
+Basically go from parent and then deal with left child to bottom and then work on right. 
+
+First we print the node -> left child -> left's child if any -> then right's child if any 
+
+
+=== Post Order Traversal 
+
+In this way, we have to deal with the left most children first before the node -> then its right sibling -> its parent if it's not the head -> head 
+
+So it's almost the same as In order traversal but head will be saved for last. 
+
+
+=== breadth-first aka LevelTraversal
+
+This method is used mostly with Queue where those who have been there longer will be printed out. So head is printed first -> its left most child -> right child -> last will be any leaf's left then right. 
+
+
+
