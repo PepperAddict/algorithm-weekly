@@ -156,3 +156,50 @@ This method is used mostly with Queue where those who have been there longer wil
 
 
 
+== February 12, 2021 
+
+=== Dyanmic arrays
+
+In this lesson we're learning a bit more about dynamic arrays, but JavaScript is always dynamic arrays so this is a bit confusing such as having to create a new array if it surpasses the limit. I'm not sure if it applies to JavaScript, but even arrays has its own big O
+
+* Get(i) is O (1)
+* Set(i, val) is O (1)
+* PushBack(val) is O(n) -> means putting things at the end of the array 
+* remove(i) is O(n)
+* size() is O (1)
+
+=== Amortized Analysis and Dynamic Arrays
+
+It takes the worst case and put it in a more average cost
+
+To figure out the amortized cost is: 
+
+cost (n operations) divide by n
+
+An example he gives is, we buy a car for 6k and we figure it'll last for 5 years.  So which means we maay have to wait 5 years to get another 6k for another car. 
+
+In that case we would have to figure out how much we would have to save ech month to reach 6k in that 5 year mark. 
+
+So 1 year is 24 months x 5 which makes 5 years = 60 months. 
+
+so now we divide 6000 dollars into 60 months which equals to 100. We would have to pay 100 dollars each month to equal 6k. 
+So the amortized cost would be 100 a month
+
+Nothing changes in the code, but this is just runtime analysis only. 
+
+
+=== Aggregate Method of Amortized Analysis
+
+Also considered teh brute-force sum.
+
+Totally lost on this topic. Need to research this later....
+
+=== Banker's Method of Amortized Analysis
+
+this way puts in tokens for saving later to use later
+
+=== Physicist's Method of Amortized Analysis
+
+This way will make a function that takes the state of a data structure to an integer. 
+
+Amortized Analysis needs work for me to understand... 
