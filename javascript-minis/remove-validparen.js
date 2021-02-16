@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+
 
 
 function Each(s, next = null, inde = null) {
@@ -13,6 +13,16 @@ function LinkedList() {
 LinkedList.prototype.insertLast = function (s, i) {
   let each = new Each(s, null, i);
   let current;
+
+  let onlySpecials = ["(", ")", "[", "]", "{", "}"];
+
+  s.find((el, index) => {
+    for (let x of onlySpecials) {
+      if (x === el) {
+        console.log(x)
+      }
+    }
+  });
 
   if (!this.head) {
     this.head = each;
@@ -51,7 +61,6 @@ LinkedList.prototype.removeMatched = function (s) {
         if (track.length > 0) {
 
           if (character === track[0].key) {
-
             track.shift();
           } else {
               s[currentNode.index] = ""
@@ -64,7 +73,6 @@ LinkedList.prototype.removeMatched = function (s) {
     }
   }
 
-  console.log(s)
   return s;
 };
 
@@ -74,24 +82,13 @@ var minRemoveToMakeValid = function (s) {
   if (s.length > 0) {
     let linked = new LinkedList();
 
-    let onlySpecials = ["(", ")", "[", "]", "{", "}"];
 
     //we're going to ignore the letters for now
-    s.find((el, index) => {
-      for (let x of onlySpecials) {
-        if (x === el) {
-
-          linked.insertLast(x, index);
-        }
-      }
-    });
-
+    linked.insertLast(s)
     let unmatched = linked.removeMatched(s);
 
     console.log(unmatched)
   }
-
-
 
 };
 
