@@ -203,3 +203,5 @@ this way puts in tokens for saving later to use later
 This way will make a function that takes the state of a data structure to an integer. 
 
 Amortized Analysis needs work for me to understand... 
+
+

@@ -22,7 +22,7 @@ var printBoard = function (board) {
 var checkIfValid = function(board, number, position) {
   //check row first 
   for (let column = 0; row < board[0].length; row++) {
-    if (board[0][column] == number && position.column != column) {
+    if (board[position.row][column] == number && position.column != column) {
       return false
     }
   }
