@@ -1,8 +1,9 @@
 var numSquares = function(n) {
     //first check if n is perfect square 
-    let split = Math.sqrt(n)
+
     let stepTable = [0]
     let i, j
+
 
 
         //if the original number isn't a square, we have to create combinations. 
@@ -16,7 +17,8 @@ var numSquares = function(n) {
                 let thePerfectSq = j * j
                 let theRemainder = theSum - thePerfectSq
 
-                stepTable[theSum] = Math.min(stepTable[theSum], stepTable[theRemainder] + 1)
+
+                stepTable[i] = Math.min(stepTable[i], stepTable[theRemainder] + 1)
             }
         }
 
@@ -26,8 +28,8 @@ var numSquares = function(n) {
 
 //console.log(numSquares(25)) //1
 //console.log(numSquares(2)) //2
-console.log(numSquares(5))
+//console.log(numSquares(5)) //2
 //console.log(numSquares(8)) //2
 //console.log(numSquares(12)) //3
-//console.log(numSquares(12))// 3
+console.log(numSquares(12))// 4
 //console.log(numSquares(13)) // 2
