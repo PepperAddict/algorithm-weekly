@@ -204,4 +204,12 @@ This way will make a function that takes the state of a data structure to an int
 
 Amortized Analysis needs work for me to understand... 
 
+== February 23, 2021 
+So I decided to take on a different teacher but now I'm a bit starting from the beginning. 
+There's a comparison for big o notation which is called *omega* 
 
+=== asymptotic bounds
+
+
+
+so to compare different big os with other you would say `n omega O(n2)`

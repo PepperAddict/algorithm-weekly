@@ -5,12 +5,11 @@ let insertSort = function (list) {
 
 
   for (let x = 1; x < list.length; x++) {
+      
       let breakpoint = list[x]
 
-
     //while breakpoint is more than 0 and left is greater than breakpoint
-    while (list[x - 1] > breakpoint) {
-        
+    while (list[x - 1] > breakpoint) {   
 
       //swap the two places
       list[x] = list[x -1];
